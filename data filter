@@ -1,1 +1,2 @@
 data = data[data['column'] == 1234] （带引号是字符串型，不带引号是数值型）
+数据被过度筛除：csv文件里有的值不是numeric，被筛掉了。解决办法：先把数值都转化成numeric，再filter
