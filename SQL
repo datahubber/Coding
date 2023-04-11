@@ -5,4 +5,7 @@ no carrier column in the table
 check whether contain certain value  
 1. set a flase value.  
 2. loop the table, change the flag if contains that value.  
-3. print the flag.
+3. print the flag.  
+
+filter  
+"join" is more efficient than "where" because complexity of "where" is n*m
