@@ -9,3 +9,6 @@ check whether contain certain value
 
 filter  
 "join" is more efficient than "where" because complexity of "where" is n*m
+
+mysql server can't start:  
+my.cnf setting
