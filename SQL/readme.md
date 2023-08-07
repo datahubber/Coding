@@ -1,0 +1,14 @@
+no carrier column in the table  
+1. write a script to check whether this column exist.  
+2. this column exists➡️ find the reason is comment seperates the script
+
+check whether contain certain value  
+1. set a flase value.  
+2. loop the table, change the flag if contains that value.  
+3. print the flag.  
+
+filter  
+"join" is more efficient than "where" because complexity of "where" is n*m
+
+mysql server can't start:  
+my.cnf setting
