@@ -21,3 +21,14 @@ SELECT
 FROM Register r
 GROUP BY contest_id
 ORDER BY percentage DESC, contest_id
+
+SELECT round(sum(customer_pref_delivery_date=order_date) * 100 / count(order_date), 2) as immediate_percentage
+FROM Delivery 
+WHERE (customer_id, order_date) IN (select customer_id, min(order_date) as first_order
+FROM Delivery
+group by customer_id)
+
+**
+SELECT ROUND(COUNT(DISTINCT player_id) / (SELECT COUNT(DISTINCT player_id) FROM Activity), 2) AS fraction
+FROM Activity
+WHERE (player_id, DATE_SUB(event_date, INTERVAL 1 DAY)) IN (SELECT player_id, MIN(event_date) AS first_login FROM Activity GROUP BY player_id)
