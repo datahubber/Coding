@@ -6,3 +6,11 @@ JOIN prices p ON 1=1
     AND p.product_id = u.product_id
     AND u.purchase_date BETWEEN p.start_date AND p.end_date
 GROUP BY u.product_id;
+
+SELECT
+    project_id,
+    ROUND(SUM(e.experience_years) / COUNT(e.experience_years),2) AS average_years
+FROM Project p
+JOIN Employee e ON
+    p.employee_id = e.employee_id
+GROUP BY project_id
