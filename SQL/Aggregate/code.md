@@ -14,3 +14,10 @@ FROM Project p
 JOIN Employee e ON
     p.employee_id = e.employee_id
 GROUP BY project_id
+
+SELECT
+    contest_id,
+    ROUND(COUNT(DISTINCT user_id)*100 / (select COUNT(user_id) from Users),2) AS percentage
+FROM Register r
+GROUP BY contest_id
+ORDER BY percentage DESC, contest_id
