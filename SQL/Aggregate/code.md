@@ -32,3 +32,18 @@ group by customer_id)
 SELECT ROUND(COUNT(DISTINCT player_id) / (SELECT COUNT(DISTINCT player_id) FROM Activity), 2) AS fraction
 FROM Activity
 WHERE (player_id, DATE_SUB(event_date, INTERVAL 1 DAY)) IN (SELECT player_id, MIN(event_date) AS first_login FROM Activity GROUP BY player_id)
+
+select id, movie, description, rating
+from cinema
+having id%2 = 1 and not description = "boring"
+order by rating desc
+
+select
+    substr(trans_date,1,7) as month,
+    country,
+    count(*) as trans_count,
+    sum(if(state = 'approved',1,0)) as approved_count,
+    sum(amount) as trans_total_amount,
+    sum(case when state = 'approved' then amount else 0 end) as approved_total_amount
+from transactions
+group by month, country
