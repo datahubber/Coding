@@ -23,6 +23,16 @@ order by user_id;
 
 SELECT max(num) as num
 FROM (select num from mynumbers group by num having count(num) = 1)
+
+select
+    activity_date as day,
+    count(distinct user_id) as active_users
+from
+    activity
+where
+    ("2019-06-27" < activity_date and activity_date <= "2019-07-27")
+group by
+    activity_date
 AS C
 
 SELECT customer_id FROM Customer group by customer_id
