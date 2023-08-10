@@ -22,3 +22,16 @@ FROM Employees e
 WHERE
     salary < 30000 AND manager_id NOT IN (select employee_id from employees as c)
 order by employee_id
+
+select
+    employee_id,
+    department_id
+from employee
+where primary_flag = "Y"
+union
+select
+    employee_id,
+    department_id
+from employee
+group by employee_id
+having count(employee_id) = 1
