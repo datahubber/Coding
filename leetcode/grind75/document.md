@@ -14,3 +14,12 @@
 
 5. Vaild Palindrome
    alphanumeric_s = ''.join([char.lower() for char in s if char.isalnum()])
+
+6. Invert Binary Tree
+   Use invertTree function for leftTree and rightTree and exchange.
+
+7. Valid Anagram
+   sorted() to sort string and compare.
+
+8. Binary Search
+   Use a while loop and left, right, mid variable to dinf the match.
