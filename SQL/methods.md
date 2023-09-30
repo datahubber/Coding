@@ -12,3 +12,6 @@ filter
 
 mysql server can't start:  
 my.cnf setting
+
+match null: ✅is null, ❎= null  
+count length: ✅length(), ❎count()
