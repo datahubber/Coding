@@ -17,3 +17,4 @@ match null: ✅is null, ❎= null
 count length: ✅length(), ❎count()
 corner case null:    ifnull(round(SUM(units*price)/sum(units), 2), 0) as average_price  
 transform date type:     date_format(trans_date, '%Y-%m') as month,  
+don't forget parentheses: where (product_id, year) in (...)
